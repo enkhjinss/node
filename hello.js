@@ -64,7 +64,7 @@
 //     console.log(`answer = ${sum}`);
 //     rl.close();
 // });
-               
+
 
 //  const readline = require('readline');
 //  const rl = readline.createInterface({
@@ -83,15 +83,14 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 
-rl.question("utgaa oruulna uu --> " , inputValue => {
-    // let string = '';
-    // let length = inputValue.length;
-    console.log(inputValue);
-    // for (let i = inputValue.length; i < inputValue.length - 1; i --) {
-    //     console.log(i);
-    // }
-  
-   rl.close();
+rl.question("utgaa oruulna uu --> ", inputValue => {
+    let name = "";
+
+    for (let i = inputValue.length - 1; i >= 0; i--) {
+        name += inputValue[i]
+    }
+    console.log(name);
+    rl.close();
 });
 
 
