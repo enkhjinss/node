@@ -10,7 +10,7 @@
 // const callback = function () {
 //     console.log("1");
 // };
-// call(); 
+// call();
 
 // function call() {
 //     console.log("2");
@@ -19,7 +19,6 @@
 // const c = () => {
 //     console.log("dfghjhgf");
 // };
-
 
 // const a = () => {
 //     let numbers = [2, 3];
@@ -40,8 +39,7 @@
 //     }
 // )
 
-
-//garaaas oruulsan utgiig nemdg 
+//garaaas oruulsan utgiig nemdg
 // const readline = require('readline');
 // const rl = readline.createInterface({
 //     input: process.stdin,
@@ -65,7 +63,6 @@
 //     rl.close();
 // });
 
-
 //  const readline = require('readline');
 //  const rl = readline.createInterface({
 //      input: process.stdin,
@@ -77,21 +74,108 @@
 //     rl.close();
 // });
 
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-})
+// const readline = require('readline');
+// const rl = readline.createInterface({
+//     input: process.stdin,
+//     output: process.stdout
+// })
 
-rl.question("utgaa oruulna uu --> ", inputValue => {
-    let name = "";
+// rl.question("utgaa oruulna uu --> ", inputValue => {
+//     let name = "";
 
-    for (let i = inputValue.length - 1; i >= 0; i--) {
-        name += inputValue[i]
+//     for (let i = inputValue.length - 1; i >= 0; i--) {
+//         name += inputValue[i]
+//     }
+//     console.log(name);
+//     rl.close();
+// });
+
+//fs
+
+// const fs = require("fs");
+
+// fs.writeFile("nodes.txt", "You guys can do it!", (error) => {
+//     if (error) throw error;
+
+//     console.log("Saved!");
+// });
+
+// create an empty file named mynewfile2.txt:
+// fs.open('mynewfile2.txt', 'w', function (err, file) {
+//   if (err) throw err;
+//   console.log(`Saved!: ${file}`);
+// })
+
+// fs.appendFile('notes.txt', 'This is my text.\n' , function (err) {
+//     if (err) throw err;
+//     console.log('Updated!');
+//   });
+
+// let http = require('http');
+
+// http.createServer(function (req, res) {
+//   // add a HTTP header:
+// //   res.writeHead(200, {'Content-Type': 'index/html'}); ene n bolohoor back-end ees irsen code-g ywuulj bgaa
+//   res.write('hey </3');
+//   res.end();
+// }).listen(8080);
+
+// const http = require('http');
+
+// http.createServer(function (req, res) {
+//   res.write(req.url);
+//   res.end();
+// }).listen(8081);
+// console.log('running');
+
+
+
+// const http = require("http");
+// const url = require("url");
+// const fs = require("fs");
+
+// http.createServer(function (req, res) {
+//     // console.log(req.url);
+//     if (req.url === "/") {
+//         fs.readFile('index.html', function (err, data) {
+//             console.log(data);
+//             res.writeHead(200, { "Content-Type": "text/html" });
+            
+//             res.write(data);
+//             return res.end();
+//         });
+//     } else if (req.url === "/profile.html") {
+        
+//     }
+// }).listen(8082);
+
+
+const http = require("http");
+const fs = require("fs");
+
+http.createServer(function (req, res) {
+    res.writeHead(200, { 'content-type': 'text/html' });
+
+    if(req.url === "/profile.html") {
+        fs.readFile("./profile.html" , (_ , data) => {
+            res.write(data);
+            res.end();
+        });
+    } else {
+        res.write('<a href="./profile.html">click</a>');
+        res.end();
     }
-    console.log(name);
-    rl.close();
-});
+  
+}).listen(8083);
+console.log("running");
 
 
 
+
+
+
+
+// const fs = require("fs");
+
+// const data = fs.readFileSync("./index.html", { encoding: "utf8", flag: "r" });
+// console.log(data);
