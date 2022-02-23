@@ -1,17 +1,30 @@
-// import chalk from 'chalk';
-// import yargs from 'yargs/yargs';
+const path = require('path');
+const fs = require('fs');
 
-const argument = process.argv.slice(2);  //argument maani object bgd bgaa
-if (argument.indexOf("-t") >= 0) {
-   const t = argument[0];
-   console.log(argument[1]);
-} else {
-    console.log("fds");
-}
+const argument = process.argv[1];
+const folder = path.dirname(argument);
+
+fs.readdir(folder, { withFileTypes: true }, (err, files) => {
+  files.forEach(file => {
+    console.log(file);
+  });
+});
 
 
 
 
-// const arg = argument.find((value) => {
-//     return value.startsWith('-t');
+
+
+
+
+// daalgavar 1 ehleed ingej hiisen
+
+// const argument = process.argv[1].split("/");
+// const folder = `../${argument[argument.length - 2]}/`
+// // const fs = require('fs');
+
+// fs.readdir(folder, (err, files) => {
+//   files.forEach(file => {
+//     console.log(file);
+//   });
 // });
