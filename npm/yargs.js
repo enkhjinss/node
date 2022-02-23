@@ -2,9 +2,10 @@
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const argv = yargs(hideBin(process.argv)).argv
-console.log(argv);
-if (argv.ships > 3 && argv.distance < 53.5) {
-  console.log('Plunder more riffiwobbles!')
+console.log(argv.haha);  //yargs 
+
+if(argv.ships === -t) {
+    console.log(argv);
 } else {
-  console.log('Retreat from the xupptumblers!')
+    console.log("t ee martsan bn");
 }

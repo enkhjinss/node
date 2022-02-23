@@ -2,11 +2,16 @@
 // import yargs from 'yargs/yargs';
 
 const argument = process.argv.slice(2);  //argument maani object bgd bgaa
-console.log(typeof argument);
 if (argument.indexOf("-t") >= 0) {
-    const arg = argument.find((value) => {
-        return value.startsWith('-t');
-    })
-} 
+   const t = argument[0];
+   console.log(argument[1]);
+} else {
+    console.log("fds");
+}
 
 
+
+
+// const arg = argument.find((value) => {
+//     return value.startsWith('-t');
+// });
