@@ -4,12 +4,18 @@ const fs = require('fs');
 const argument = process.argv[1];
 const folder = path.dirname(argument);
 
+const yargs = require('yargs/yargs');
+const { hideBin } = require('yargs/helpers');
+const a = yargs(hideBin(process.argv)).argv;
+console.log(a);
+
+
 fs.readdir(folder, { withFileTypes: true }, (err, files) => {
   files.forEach(file => {
     console.log(file);
   });
 });
-
+  
 
 
 
