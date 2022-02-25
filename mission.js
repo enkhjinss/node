@@ -63,14 +63,28 @@ const chocolates= [
     {"dark":false, "flavour":"lemon"},
   ];
 
-const darkChocolates = chocolates.filter(checkProperty("dark")(true));
-const darkChoco = checkProperty("dark")(true);
 
-
-
-const checkProperty = (string) => {
-    return 
+// const checkProperty = key => value => item => item[key] === value;
+const checkProperty = (key) => {
+    return (value) => {
+      return (item) => {
+        return item[key] === value;
+      }
+    }
 }
 
 
+const darkChocolates = chocolates.filter(checkProperty("dark")(true));
+console.log(darkChocolates);
 
+const darkChocolates = chocolates.filter(checkProperty('dark')(true)(eq));
+console.log(darkChocolates);
+
+const almondChocolates = chocolates.filter(checkProperty('price')(20)(gte));
+console.log(almondChocolates );
+
+const strawberry = chocolates.filter(checkProperty('price')(30)(lte));
+console.log(strawberry);
+
+const strawberry = chocolates.filter(checkProperty('price')(30)(eq));
+console.log(strawberry);
