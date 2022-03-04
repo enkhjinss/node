@@ -10,11 +10,11 @@ const a = yargs(hideBin(process.argv)).argv;
 console.log(a);
 
 
-fs.readdir(folder, { withFileTypes: true }, (err, files) => {
-  files.forEach(file => {
-    console.log(file);
-  });
-});
+// fs.readdir(folder, { withFileTypes: true }, (err, files) => {
+//   files.forEach(file => {
+//     console.log(file);
+//   });
+// });
   
 
 
